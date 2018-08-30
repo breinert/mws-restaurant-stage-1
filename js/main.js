@@ -178,6 +178,7 @@ createRestaurantHTML = (restaurant) => {
 
   const more = document.createElement('button');
   more.innerHTML = 'View Details';
+  more.setAttribute('tabIndex', '3');
   more.addEventListener('click', function() {
     window.location.href = DBHelper.urlForRestaurant(restaurant);
   });

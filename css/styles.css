@@ -20,17 +20,7 @@ ul, li {
 	font-size: 10pt;
 	color: #333;
 }
-a {
-	color: orange;
-	text-decoration: none;
-}
-a:hover, a:focus {
-	color: #3397db;
-	text-decoration: none;
-}
-a img{
-	border: none 0px #fff;
-}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 0 20px;
@@ -43,9 +33,11 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 #footer {
-  background-color: #444;
+  background-color: #252831;
   color: #aaa;
   font-size: 8pt;
   letter-spacing: 1px;
@@ -73,43 +65,50 @@ nav h1 a {
   text-transform: uppercase;
 }
 #breadcrumb {
-    padding: 10px;
-    margin: 0px;
-    list-style: none;
-    background-color: #f18200;
-    font-size: 1.8em;
-    font-weight: 400;
-    line-height: 1;
-    border: solid black 1px;
-    max-width: 100%;
-
-    text-align: center;
+  padding: 10px 0;
+  list-style: none;
+  background-color: #eee;
+  margin: 0;
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
 }
 
 /* Display list items side by side */
 #breadcrumb li {
-    display: inline;
+  display: inline;
+  font-size: 17px;
 }
 
 /* Add a slash symbol (/) before/behind each list item */
 #breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
 }
 
 /* Add a color to all links inside the list */
 #breadcrumb li a {
-    color: #0275d8;
-    text-decoration: none;
+  color: #0275d8;
+  text-decoration: none;
 }
 
 /* Add a color on mouse-over */
 #breadcrumb li a:hover {
-    color: #01447e;
-    text-decoration: underline;
+  color: #01447e;
+  text-decoration: underline;
+}
 }
 /* ====================== Map ====================== */
+
+#map-container {
+  background: blue none repeat scroll 0 0;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
 #map {
   height: 400px;
   width: 100%;
@@ -119,7 +118,7 @@ nav h1 a {
 .filter-options {
   width: 100%;
   padding: 15px 0;
-  background-color: #3397DB;
+  background-color: #252831;
   align-items: center;
 }
 .filter-options h2 {
@@ -154,9 +153,9 @@ nav h1 a {
 }
 #restaurants-list li {
   background-color: #fff;
-  border: 2px solid #ccc;
+  border: 2px solid #252831;
   font-family: Arial,sans-serif;
-  margin: 10px auto;
+  margin: 5px auto;
   min-height: 380px;
   padding: 0 25px;
   text-align: left;
@@ -185,18 +184,6 @@ nav h1 a {
   margin: 0;
   font-size: 11pt;
 }
-/*#restaurants-list li a {
-  background-color: orange;
-  border-bottom: 3px solid #eee;
-  color: #fff;
-  display: inline-block;
-  font-size: 10pt;
-  margin: 15px 0 0;
-  padding: 8px 30px 10px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-}*/
 button {
   background-color: orange;
   padding: 5px 10px;
@@ -213,16 +200,13 @@ button:hover {
 }
 /* ====================== Restaurant Details ====================== */
 .inside header {
-  position: fixed;
-  top: 0;
   width: 100%;
-  z-index: 1000;
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
-  display: block;
-
+  height: 20%;
+  width: 100%;
+  position: absolute;
 }
 .inside #map {
   background-color: #ccc;
@@ -232,7 +216,7 @@ button:hover {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -246,7 +230,8 @@ button:hover {
   width: 100%;
 }
 #restaurant-img {
-  width: 90%;
+  width: 100%;
+  max-width: 600px;
 }
 #restaurant-address {
   font-size: 12pt;
@@ -267,9 +252,10 @@ button:hover {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 0px 30px;
-  width: 50%;
+  padding: 450px 0px 30px;
+  width: 100%;
   text-align: center;
+
 }
 #reviews-container {
   padding: 30px 0px 80px;
@@ -292,9 +278,10 @@ button:hover {
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 5px 20px;
+  padding: 0;
   position: relative;
-  width: 85%;
+  width: 100%;
+  max-width: 1096px;
 }
 #reviews-list li p {
   margin: 0 0 10px;
