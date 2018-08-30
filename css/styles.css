@@ -98,9 +98,9 @@ nav h1 a {
   color: #01447e;
   text-decoration: underline;
 }
-}
-/* ====================== Map ====================== */
 
+/* ====================== Map ====================== */
+/*
 #map-container {
   background: blue none repeat scroll 0 0;
   height: 20%;
@@ -109,6 +109,7 @@ nav h1 a {
   flex-direction: column;
   position: absolute;
 }
+*/
 #map {
   height: 400px;
   width: 100%;
