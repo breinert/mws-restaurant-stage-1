@@ -4,6 +4,23 @@ let restaurants,
 var newMap
 var markers = []
 
+//Service Worker registration
+if ('serviceWorker' in navigator) {
+  //wait until page loads to start sw
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      registration.addEventListener('updatefound', function() {
+        let installingWorker = registration.installing;
+        console.log('A new service worker is being installed:', installingWorker);
+      });
+    })
+    .catch(function(err) {
+      // registration failed :(
+      console.error('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -176,6 +193,7 @@ createRestaurantHTML = (restaurant) => {
   address.innerHTML = restaurant.address;
   li.append(address);
 
+  //create a button element and allow smoother tab index
   const more = document.createElement('button');
   more.innerHTML = 'View Details';
   more.setAttribute('tabIndex', '3');
