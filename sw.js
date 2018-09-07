@@ -19,7 +19,7 @@ const cacheFiles = [
   '/img/9.jpg',
   '/img/10.jpg'
 ];
-
+//install the service worker
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(staticCacheName)
@@ -30,7 +30,7 @@ self.addEventListener('install', function(event) {
   );
 });
 
-
+//return cached information
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
@@ -38,13 +38,16 @@ self.addEventListener('fetch', function(event) {
         if(response) {
           return response;
         }
+        //clone the request
         let fetchRequest = event.request.clone();
         return fetch(fetchRequest)
           .then(function(response) {
+            //check for a valid response
             if(!response || response.status !== 200 || response.type !== 'basic') {
               console.log(response);
               return response;
             }
+            //clone the response
             let responseToCache = response.clone();
             caches.open(staticCacheName)
               .then(function(cache) {
@@ -59,6 +62,7 @@ self.addEventListener('fetch', function(event) {
   );
 });
 
+//update and manage the cache
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
