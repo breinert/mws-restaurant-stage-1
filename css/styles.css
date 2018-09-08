@@ -10,7 +10,7 @@ body {
 	background-color: #fdfdfd;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1100px;
+  /*max-width: 1100px;*/
 	position:relative;
 }
 ul, li {
@@ -70,7 +70,7 @@ nav h1 a {
   background-color: #eee;
   margin: 0;
   width: 100%;
-  max-width: 1100px;
+  /*max-width: 1100px;*/
   text-align: center;
 }
 
@@ -273,7 +273,7 @@ button:hover {
   padding: 0;
   position: relative;
   width: 100%;
-  max-width: 1096px;
+  /*max-width: 1096px;*/
 }
 #reviews-list li p {
   margin: 0 0 10px;
